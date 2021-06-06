@@ -31,6 +31,6 @@
 *.out
 *.app
 
-*/.idea/
+*/.idea
 */c/cmake-build-debug
 */c/CMakeLists.txt
