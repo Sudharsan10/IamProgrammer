@@ -1,0 +1,14 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+G:/Sudo/Workshop/Repo Maintanence/IamProgrammer/data_structure/linked_list/singlely_linked_list/c/main.c
+stdio.h
+-
+stdlib.h
+-
+
