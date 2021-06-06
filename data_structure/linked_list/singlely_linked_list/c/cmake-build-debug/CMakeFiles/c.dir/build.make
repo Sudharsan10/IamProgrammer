@@ -60,36 +60,36 @@ include CMakeFiles\c.dir\progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles\c.dir\flags.make
 
-CMakeFiles\c.dir\main.cpp.obj: CMakeFiles\c.dir\flags.make
-CMakeFiles\c.dir\main.cpp.obj: ..\main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="G:\Sudo\Workshop\Repo Maintanence\IamProgrammer\data_structure\linked_list\singlely_linked_list\c\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/c.dir/main.cpp.obj"
+CMakeFiles\c.dir\main.c.obj: CMakeFiles\c.dir\flags.make
+CMakeFiles\c.dir\main.c.obj: ..\main.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="G:\Sudo\Workshop\Repo Maintanence\IamProgrammer\data_structure\linked_list\singlely_linked_list\c\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/c.dir/main.c.obj"
 	C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1428~1.299\bin\Hostx86\x86\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\c.dir\main.cpp.obj /FdCMakeFiles\c.dir\ /FS -c "G:\Sudo\Workshop\Repo Maintanence\IamProgrammer\data_structure\linked_list\singlely_linked_list\c\main.cpp"
+ /nologo $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) /FoCMakeFiles\c.dir\main.c.obj /FdCMakeFiles\c.dir\ /FS -c "G:\Sudo\Workshop\Repo Maintanence\IamProgrammer\data_structure\linked_list\singlely_linked_list\c\main.c"
 <<
 
-CMakeFiles\c.dir\main.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/c.dir/main.cpp.i"
-	C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1428~1.299\bin\Hostx86\x86\cl.exe > CMakeFiles\c.dir\main.cpp.i @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "G:\Sudo\Workshop\Repo Maintanence\IamProgrammer\data_structure\linked_list\singlely_linked_list\c\main.cpp"
+CMakeFiles\c.dir\main.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/c.dir/main.c.i"
+	C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1428~1.299\bin\Hostx86\x86\cl.exe > CMakeFiles\c.dir\main.c.i @<<
+ /nologo $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "G:\Sudo\Workshop\Repo Maintanence\IamProgrammer\data_structure\linked_list\singlely_linked_list\c\main.c"
 <<
 
-CMakeFiles\c.dir\main.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/c.dir/main.cpp.s"
+CMakeFiles\c.dir\main.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/c.dir/main.c.s"
 	C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1428~1.299\bin\Hostx86\x86\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\c.dir\main.cpp.s /c "G:\Sudo\Workshop\Repo Maintanence\IamProgrammer\data_structure\linked_list\singlely_linked_list\c\main.cpp"
+ /nologo $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) /FoNUL /FAs /FaCMakeFiles\c.dir\main.c.s /c "G:\Sudo\Workshop\Repo Maintanence\IamProgrammer\data_structure\linked_list\singlely_linked_list\c\main.c"
 <<
 
 # Object files for target c
 c_OBJECTS = \
-"CMakeFiles\c.dir\main.cpp.obj"
+"CMakeFiles\c.dir\main.c.obj"
 
 # External object files for target c
 c_EXTERNAL_OBJECTS =
 
-c.exe: CMakeFiles\c.dir\main.cpp.obj
+c.exe: CMakeFiles\c.dir\main.c.obj
 c.exe: CMakeFiles\c.dir\build.make
 c.exe: CMakeFiles\c.dir\objects1.rsp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="G:\Sudo\Workshop\Repo Maintanence\IamProgrammer\data_structure\linked_list\singlely_linked_list\c\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable c.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="G:\Sudo\Workshop\Repo Maintanence\IamProgrammer\data_structure\linked_list\singlely_linked_list\c\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Linking C executable c.exe"
 	C:\Users\Sudo\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\211.7142.21\bin\cmake\win\bin\cmake.exe -E vs_link_exe --intdir=CMakeFiles\c.dir --rc=C:\PROGRA~2\WI3CF2~1\10\bin\100190~1.0\x86\rc.exe --mt=C:\PROGRA~2\WI3CF2~1\10\bin\100190~1.0\x86\mt.exe --manifests -- C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1428~1.299\bin\Hostx86\x86\link.exe /nologo @CMakeFiles\c.dir\objects1.rsp @<<
  /out:c.exe /implib:c.lib /pdb:"G:\Sudo\Workshop\Repo Maintanence\IamProgrammer\data_structure\linked_list\singlely_linked_list\c\cmake-build-debug\c.pdb" /version:0.0 /machine:X86 /debug /INCREMENTAL /subsystem:console  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib 
 <<

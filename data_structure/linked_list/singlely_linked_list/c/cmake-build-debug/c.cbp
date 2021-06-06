@@ -82,7 +82,7 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="G:/Sudo/Workshop/Repo Maintanence/IamProgrammer/data_structure/linked_list/singlely_linked_list/c/main.cpp">
+		<Unit filename="G:/Sudo/Workshop/Repo Maintanence/IamProgrammer/data_structure/linked_list/singlely_linked_list/c/main.c">
 			<Option target="c"/>
 		</Unit>
 		<Unit filename="G:/Sudo/Workshop/Repo Maintanence/IamProgrammer/data_structure/linked_list/singlely_linked_list/c/CMakeLists.txt">
