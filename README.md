@@ -4,4 +4,4 @@ This is a repo  for code files covering Data structures written in multiple lang
 Goals:
 - To familiarize with DS deeply by trying to implement them in various languages
 - To maintain best practices of codeing w.r.t each language
-- To have all round knowledge in all three languages
+- To become proficient in all four languages may be expert in two of them
