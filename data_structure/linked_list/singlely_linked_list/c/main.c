@@ -14,8 +14,7 @@ struct Node {
  */
 struct Node* create_n_node(int N){
     // Create root node
-    struct Node* root;
-    root = (struct Node*) malloc(sizeof(struct Node));
+    struct Node* root = (struct Node*) malloc(sizeof(struct Node));
     root -> data = 0;
     root -> next = NULL;
 
@@ -25,8 +24,7 @@ struct Node* create_n_node(int N){
 
     for(int i=1; i<=N-1; i++){
         // create new node
-        struct Node* new_node;
-        new_node = (struct Node*) malloc(sizeof(struct Node));
+        struct Node* new_node = (struct Node*) malloc(sizeof(struct Node));
         new_node -> data = i;
         new_node -> next = NULL;
 
