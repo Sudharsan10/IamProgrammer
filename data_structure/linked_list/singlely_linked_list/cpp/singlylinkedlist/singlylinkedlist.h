@@ -5,10 +5,14 @@
 #ifndef CPP_SINGLYLINKEDLIST_H
 #define CPP_SINGLYLINKEDLIST_H
 
+#include "../node/node.h"
 
-class singlylinkedlist {
+namespace LL{
+    class SinglyLinkedList {
 
-};
+    public:
+    };
+}
 
 
 #endif //CPP_SINGLYLINKEDLIST_H
