@@ -5,6 +5,9 @@
 #ifndef CPP_NODE_H
 #define CPP_NODE_H
 
+#include<memory>
+#include <utility>
+
 namespace LL {
     /*
      * A Node class for defining a custom data structure for linked list
@@ -16,21 +19,16 @@ namespace LL {
         Node() : Node{0, nullptr} {}
 
         /* ---> 02: Custom Constructors <--- */
-        explicit Node(int data) : Node{data, nullptr}{}
+        explicit Node(int data) : Node{data, nullptr} {}
 
-        Node(int data, Node* next) : data_{data}, next_{next} {}
+        Node(int data, std::shared_ptr<Node> next) : data_{data}, next_{std::move(next)} {}
 
         /* Destructors */
-        ~Node() {
-            delete this->next_;
-            this->next_ = nullptr;
-        }
+        ~Node() = default;
 
     private:
         int data_;
-        Node *next_;
-
+        std::shared_ptr<Node> next_ = std::make_shared<Node>(0, nullptr);
     };
 }
-
 #endif //CPP_NODE_H
