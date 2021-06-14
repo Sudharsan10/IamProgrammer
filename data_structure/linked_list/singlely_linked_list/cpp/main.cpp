@@ -1,8 +1,9 @@
 #include <iostream>
-#include "node/node.h"
 #include "singlylinkedlist/singlylinkedlist.h"
 
 int main() {
-    std::cout << "Hello, World!" << std::endl;
+    LL::SinglyLinkedList head;
+    head.create_n_nodes(5);
+    head.traverseAndPrint();
     return 0;
 }
