@@ -13,7 +13,23 @@ namespace LL {
      * A Node class for defining a custom data structure for linked list
      */
     class Node {
+    private:
+        int data_;
+
     public:
+        /* Variables */
+        std::shared_ptr<Node> next_;
+
+        /* Getters*/
+        [[nodiscard]] int get_data() const {
+            return data_;
+        }
+
+        /* Setters*/
+        void set_data(int data) {
+            this->data_ = data;
+        }
+
         /* Constructors */
         /* ---> 01: Default  constructor <--- */
         Node() : Node{0, nullptr} {}
@@ -26,9 +42,6 @@ namespace LL {
         /* Destructors */
         ~Node() = default;
 
-    private:
-        int data_;
-        std::shared_ptr<Node> next_ = std::make_shared<Node>(0, nullptr);
     };
 }
 #endif //CPP_NODE_H
