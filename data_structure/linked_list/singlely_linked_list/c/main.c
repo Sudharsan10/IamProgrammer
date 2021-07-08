@@ -60,16 +60,23 @@ void autoIncreaseId(struct Node* start) {
 }
 
 /*
- * Lets create a function to insert after a given node
+ * Lets create a function to insert after a desired node
  */
 void insertAfter(struct Node* root, int target_id, int data) {
     while(root){
         if (root->id == target_id) {
+            /* Create new node and assign data and ID */
             struct Node* new_node = (struct Node*) malloc(sizeof(struct Node));
             new_node->id = target_id+1;
             new_node->data = data;
+
+            /* point new node's pointer to the next in line
+             * and point the node before insertion's pointer to new node
+             */
             new_node->next = root->next;
             root->next = new_node;
+
+            /* Auto update the ID of rest of the linklist nodes */
             autoIncreaseId(new_node->next);
             break;
         }
@@ -77,12 +84,45 @@ void insertAfter(struct Node* root, int target_id, int data) {
     }
 }
 
+/*
+ * Lets create a function to insert before a desired node
+ */
+void insertBefore(struct Node* root, int target_id, int data) {
+    struct Node* prev = root;
+    while(root){
+        if (root->id == target_id) {
+            /* Create new node and assign data and ID */
+            struct Node* new_node = (struct Node*) malloc(sizeof(struct Node));
+            new_node->id = target_id;
+            new_node->data = data;
+
+            /* point new node's pointer to the next in line
+             * and point the node before insertion's pointer to new node
+             */
+            new_node->next = root;
+            prev->next = new_node;
+
+            /* Auto update the ID of rest of the linklist nodes */
+            autoIncreaseId(new_node->next);
+            break;
+        }
+        else {
+            prev = root;
+            root = root->next;
+        }
+    }
+}
+
 int main() {
     srand(time(0));
+    printf("Create 10 node Singly linked list: \n");
     traverse_and_display_node_values(create_n_node(10));
     struct Node* root = create_n_node(10);
     autoIncreaseId(root);
-    insertAfter(root, 6, 345);
+    printf("\nBefore Insertion: \n");
+    traverse_and_display_node_values(root);
+    printf("\nAfter Insertion: \n");
+    insertBefore(root, 6, 345);
     traverse_and_display_node_values(root);
     return 0;
 }
