@@ -60,6 +60,16 @@ void autoIncreaseId(struct Node* start) {
 }
 
 /*
+ * Lets create a function to decrease the ID of the node
+ */
+void autoDecreaseId(struct Node* start) {
+    while(start){
+        start->id--;
+        start = start->next;
+    }
+}
+
+/*
  * Lets create a function to insert after a desired node
  */
 void insertAfter(struct Node* root, int target_id, int data) {
@@ -117,12 +127,17 @@ int main() {
     srand(time(0));
     printf("Create 10 node Singly linked list: \n");
     traverse_and_display_node_values(create_n_node(10));
+
     struct Node* root = create_n_node(10);
     autoIncreaseId(root);
+
     printf("\nBefore Insertion: \n");
     traverse_and_display_node_values(root);
+
     printf("\nAfter Insertion: \n");
     insertBefore(root, 6, 345);
+    insertAfter(root, 6, 465);
+
     traverse_and_display_node_values(root);
     return 0;
 }
