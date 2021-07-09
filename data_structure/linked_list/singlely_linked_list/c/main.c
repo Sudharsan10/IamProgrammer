@@ -123,6 +123,27 @@ void insertBefore(struct Node* root, int target_id, int data) {
     }
 }
 
+/*
+ * Delete node by Id
+ */
+void deleteNodeById(struct Node** crawler, int target_id) {
+    struct Node* head = NULL;
+    while(*crawler){
+        if ((*crawler)->id == target_id) {
+            head = *crawler;
+            (*crawler) = (*crawler)->next;
+            free(head);
+
+            /* Auto update the ID of rest of the linklist nodes */
+            autoDecreaseId((*crawler));
+            break;
+        }
+        else {
+            crawler = &(*crawler)->next;
+        }
+    }
+}
+
 int main() {
     srand(time(0));
     printf("Create 10 node Singly linked list: \n");
@@ -135,9 +156,12 @@ int main() {
     traverse_and_display_node_values(root);
 
     printf("\nAfter Insertion: \n");
-    insertBefore(root, 6, 345);
+    insertBefore(root, 2, 345);
     insertAfter(root, 6, 465);
+    traverse_and_display_node_values(root);
 
+    printf("\nAfter Delete: \n");
+    deleteNodeById(&root, 5);
     traverse_and_display_node_values(root);
     return 0;
 }
