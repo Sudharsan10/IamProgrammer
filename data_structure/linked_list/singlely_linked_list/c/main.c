@@ -79,6 +79,7 @@ void insertAfter(struct Node* root, int target_id, int data) {
             struct Node* new_node = (struct Node*) malloc(sizeof(struct Node));
             new_node->id = target_id+1;
             new_node->data = data;
+            new_node->next = NULL;
 
             /* point new node's pointer to the next in line
              * and point the node before insertion's pointer to new node
@@ -97,10 +98,9 @@ void insertAfter(struct Node* root, int target_id, int data) {
 /*
  * Lets create a function to insert before a desired node
  */
-void insertBefore(struct Node* root, int target_id, int data) {
-    struct Node* prev = root;
-    while(root){
-        if (root->id == target_id) {
+void insertBefore(struct Node** crawler, int target_id, int data) {
+    while(*crawler){
+        if ((*crawler)->id == target_id) {
             /* Create new node and assign data and ID */
             struct Node* new_node = (struct Node*) malloc(sizeof(struct Node));
             new_node->id = target_id;
@@ -109,18 +109,41 @@ void insertBefore(struct Node* root, int target_id, int data) {
             /* point new node's pointer to the next in line
              * and point the node before insertion's pointer to new node
              */
-            new_node->next = root;
-            prev->next = new_node;
+            new_node->next = *crawler;
+            *crawler = new_node;
 
             /* Auto update the ID of rest of the linklist nodes */
-            autoIncreaseId(new_node->next);
+            autoIncreaseId((*crawler)->next);
             break;
         }
-        else {
-            prev = root;
-            root = root->next;
-        }
+        else crawler = &(*crawler)->next;
     }
+}
+
+/*
+ * Push node after last node
+ */
+void push(struct Node** crawler, int id, int data) {
+    /* get to the end of the linked list */
+    while(*crawler) crawler = &(*crawler)->next;
+
+    /* create a new node with given data and id */
+    struct Node* new_node = (struct Node*) malloc(sizeof(struct Node));
+    new_node->id = id;
+    new_node->data = data;
+    new_node->next = NULL;
+
+    /* create a new node with given data and id */
+    (*crawler) = new_node;
+}
+
+/*
+ * Pop top node
+ */
+struct Node pop(struct Node** crawler) {
+    struct Node* popped_node = *crawler;
+    *crawler = (*crawler)->next;
+    return *popped_node;
 }
 
 /*
@@ -138,9 +161,7 @@ void deleteNodeById(struct Node** crawler, int target_id) {
             autoDecreaseId((*crawler));
             break;
         }
-        else {
-            crawler = &(*crawler)->next;
-        }
+        else crawler = &(*crawler)->next;
     }
 }
 
@@ -156,12 +177,20 @@ int main() {
     traverse_and_display_node_values(root);
 
     printf("\nAfter Insertion: \n");
-    insertBefore(root, 2, 345);
+    insertBefore(&root, 1, 345);
     insertAfter(root, 6, 465);
     traverse_and_display_node_values(root);
 
     printf("\nAfter Delete: \n");
     deleteNodeById(&root, 5);
+    traverse_and_display_node_values(root);
+
+    printf("\nAfter Push: \n");
+    push(&root, 15, 5468);
+    traverse_and_display_node_values(root);
+
+    struct Node popped = pop(&root);
+    printf("\nI popped it, its Id: %d, data %d\n", popped.id, popped.data);
     traverse_and_display_node_values(root);
     return 0;
 }
